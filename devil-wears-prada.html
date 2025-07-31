@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Devil Wears Prada – Detail Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f5f5f5;
+      --text-color: #222;
+      --card-bg: #ffffff;
+      --accent-color: #b30059;
+      --badge-bg: #eee;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --card-bg: #1e1e1e;
+      --accent-color: #ff80ab;
+      --badge-bg: #333;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0 15px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--accent-color);
+      padding: 15px 20px;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 20px;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s, color 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .top-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .top-section {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .book-info {
+      flex: 1;
+    }
+
+    .cover-images {
+      display: flex;
+      gap: 15px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cover-img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cover-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+    }
+
+    h2 {
+      color: var(--accent-color);
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--text-color);
+      padding: 2px 8px;
+      margin-right: 5px;
+      border-radius: 5px;
+      font-size: 0.85em;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.2em;
+    }
+
+    a {
+      color: var(--accent-color);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .scroll-prompts {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 10px 0;
+    }
+
+    .scroll-wrapper {
+      overflow-x: auto;
+    }
+
+    .scroll-wrapper::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .scroll-wrapper::-webkit-scrollbar-thumb {
+      background-color: var(--accent-color);
+      border-radius: 3px;
+    }
+
+    .prompt-header {
+      font-weight: 600;
+      font-size: 1.1em;
+      margin-bottom: 6px;
+    }
+
+    .prompt-subtitle {
+      font-size: 0.95em;
+      color: gray;
+    }
+
+    .llm-scroll {
+      max-height: 100px;
+      overflow-y: auto;
+    }
+
+    .llm-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .llm-scroll::-webkit-scrollbar-thumb {
+      background-color: var(--accent-color);
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 Book & Movie Viewer</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+  </header>
+
+  <div class="container">
+    <div class="card top-section">
+      <div class="book-info">
+        <h2>📖 The Devil Wears Prada</h2>
+        <p><strong>Author:</strong> Lauren Weisberger ✍</p>
+        <p><strong>Published:</strong> February 4, 2003 📅</p>
+        <p><strong>Pages:</strong> 360 📖</p>
+        <p><strong>Genres:</strong> 
+          <span class="badge">Fiction</span>
+          <span class="badge">Chick lit</span>
+          <span class="badge">Humor</span>
+        </p>
+        <p><strong>Characters:</strong> Andrea Sachs, Miranda Priestly, Emily Charlton, Nigel</p>
+        <p><strong>Summary:</strong> Andrea Sachs lands a job as assistant to a powerful editor-in-chief in New York’s high-stakes fashion world. What seems like a dream job soon becomes a toxic challenge to her values, identity, and mental health.</p>
+      </div>
+      <div class="cover-images">
+        <img class="cover-img" src="https://scontent.fisb17-1.fna.fbcdn.net/v/t39.30808-6/500280810_1246277210191350_3135833202317112128_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3fcx2XDnEA0Q7kNvwHB6Smq&_nc_oc=Admz8OopaPllczyJ5QiAKmC_rRrRsmt0BYgrF2qA7WxvwpmVinjYXRG0jNy-E2OpH4PM3clGHfE_ARTpDIRcWhJu&_nc_zt=23&_nc_ht=scontent.fisb17-1.fna&_nc_gid=NiW9OqsixTEl4q1Y8X4WRg&oh=00_AfS0pUXRxqtmZqZ7B97OCTX_bDnLOh13cg5SQJFQ3RCtKg&oe=6890E246" alt="Movie Poster">
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>👪 Parental Guidance</h2>
+      <p><strong>Age Recommendation:</strong> <span class="badge">15+</span></p>
+      <ul>
+        <li><strong>Sex, Romance & Nudity:</strong> Moderate – Casual sex, revealing clothing ❤</li>
+        <li><strong>Violence & Scariness:</strong> Moderate – Drunk driving leads to coma 🚗</li>
+        <li><strong>Language:</strong> Some – Includes “F--k,” “S--t,” “Bitch” 🗣</li>
+        <li><strong>Drinking, Drugs & Smoking:</strong> High – Alcohol at parties, crack reference 🍷</li>
+        <li><strong>Products & Purchases:</strong> High – Frequent brand names like Starbucks, designer labels 💄</li>
+        <li><strong>Positive Messages:</strong> None – Body image and obedience to a toxic boss are questionable themes ❌</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="prompt-header">💬 Discussion Prompts</div>
+      <div class="prompt-subtitle">Reflect on these key themes and ideas</div>
+      <div class="scroll-wrapper">
+        <div class="scroll-prompts" style="gap: 30px; white-space: nowrap;">
+          <span>💼 What messages about success and self-image does this story give?</span>
+          <span>📉 How is workplace mistreatment shown and resolved?</span>
+          <span>🆚 What role does conformity vs. individuality play?</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🤖 Curated Insights from LLM</h2>
+      <ul class="llm-scroll">
+        <li>🎯 Prioritize mental well-being over toxic success.</li>
+        <li>🧠 Notice the subtle pressure of industry-driven conformity.</li>
+        <li>📚 Compare real-life job struggles with fictional portrayals.</li>
+        <li>🌈 Analyze diversity, values, and character growth critically.</li>
+        <li>💔 It highlights the emotional cost of chasing prestige at the expense of personal relationships.</li>
+        <li>🎭 The contrast between outward appearances and inner identity is a recurring tension in the narrative.</li>
+        <li>🔄 Characters evolve through a journey of self-reflection and reevaluation of their values.</li>
+        <li>🧠 The fashion industry is portrayed not just as glamorous, but also as a pressure-filled system driven by perfection.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🎬 Movie Adaptation</h2>
+      <p><strong>Title:</strong> The Devil Wears Prada (2006)</p>
+      <p><strong>Rated:</strong> PG-13 🔞</p>
+      <p><strong>Duration:</strong> 1h 46min ⏱</p>
+      <p><strong>IMDB:</strong> <a href="https://www.imdb.com/title/tt0458352/" target="_blank">View Movie</a></p>
+      <ul>
+        <li><strong>Sex/Nudity:</strong> <span class="stars">★★★★★</span></li>
+        <li><strong>Violence:</strong> <span class="stars">★★★☆☆</span></li>
+        <li><strong>Language:</strong> <span class="stars">★★★☆☆</span></li>
+        <li><strong>Substance Use:</strong> <span class="stars">★★★☆☆</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.body.classList.contains('dark') ? '🌞' : '🌙';
+    }
+  </script>
+</body>
+</html>
